@@ -1,0 +1,267 @@
+<resources>
+    <string name="app_name">Installer NEXT</string>
+
+    <!-- Main Screen -->
+    <string name="select_apk">Select APK File</string>
+    <string name="select_apk_file">Select APK File</string>
+    <string name="select_apk_description">Choose an APK file to view detailed information and
+        install</string>
+    <string name="no_apk_selected">No APK file selected</string>
+    <string name="browse_files">Browse Files</string>
+    <string name="recent_files">Recent Files</string>
+    <string name="root_status">Root Status</string>
+    <string name="root_available">Root access available</string>
+    <string name="root_not_available">Root access not available</string>
+    <string name="request_root">Request Root</string>
+
+    <!-- Installation Dialog -->
+    <string name="install_app">Install Application</string>
+    <string name="app_info">Application Information</string>
+    <string name="package_name">Package Name</string>
+    <string name="version_name">Version</string>
+    <string name="version_code">Version Code</string>
+    <string name="version">Version</string>
+    <string name="size">Size</string>
+    <string name="target_sdk">Target SDK</string>
+    <string name="min_sdk">Minimum SDK</string>
+    <string name="compile_sdk">Compile SDK</string>
+    <string name="app_size">Application Size</string>
+    <string name="size_change">Size Change</string>
+    <string name="file_source">File Source</string>
+    <string name="supported_abis">Supported ABIs</string>
+    <string name="signature_info">Signature Information</string>
+    <string name="signature_algorithm">Signature Algorithm</string>
+    <string name="signature_changed">Signature Changed</string>
+    <string name="signature_unchanged">Signature Unchanged</string>
+    <string name="permissions">Permissions</string>
+    <string name="features">Features</string>
+    <string name="install">Install</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="update">Update</string>
+    <string name="update_available">Update Available</string>
+    <string name="more_info">More Information</string>
+    <string name="ready_to_install">Ready to Install</string>
+    <string name="installation_blocked">Installation Blocked</string>
+    <string name="requires_root">Requires Root Access</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="show_advanced_info">Show Advanced Information</string>
+    <string name="hide_advanced_info">Hide Advanced Information</string>
+    <string name="certificate_issuer">Certificate Issuer</string>
+    <string name="certificate_validity">Certificate Validity</string>
+    <string name="and_more_permissions">and %d more permissions</string>
+    <string name="uninstall_existing">Uninstall Existing</string>
+
+    <!-- File Size Units -->
+    <string name="bytes">B</string>
+    <string name="kilobytes">KB</string>
+    <string name="megabytes">MB</string>
+    <string name="gigabytes">GB</string>
+
+    <!-- Status Messages -->
+    <string name="installing">Installing…</string>
+    <string name="install_success">Installation successful</string>
+    <string name="install_failed">Installation failed</string>
+    <string name="root_required">Root access required</string>
+    <string name="root_granted">Root access granted</string>
+    <string name="root_denied">Root access denied</string>
+    <string name="parsing_apk">Parsing APK file…</string>
+    <string name="invalid_apk">Invalid APK file</string>
+
+    <!-- Permissions -->
+    <string name="permission_storage">Storage permission is required to access APK files</string>
+    <string name="permission_install">Install permission is required to install applications</string>
+    <string name="grant_permission">Grant Permission</string>
+
+    <!-- ABI Types -->
+    <string name="abi_arm64_v8a">ARM64 (64-bit)</string>
+    <string name="abi_armeabi_v7a">ARM (32-bit)</string>
+    <string name="abi_x86_64">x86_64 (64-bit)</string>
+    <string name="abi_x86">x86 (32-bit)</string>
+    <string name="abi_universal">Universal</string>
+
+    <!-- Error Messages -->
+    <string name="error_file_not_found">File not found</string>
+    <string name="error_permission_denied">Permission denied</string>
+    <string name="error_invalid_package">Invalid package</string>
+    <string name="error_insufficient_storage">Insufficient storage space</string>
+    <string name="error_incompatible_update">Incompatible update</string>
+    <string name="error_unknown">Unknown error occurred</string>
+
+    <!-- Additional Info -->
+    <string name="first_install_time">First Install Time</string>
+    <string name="last_update_time">Last Update Time</string>
+    <string name="installer_package">Installer Package</string>
+    <string name="data_directory">Data Directory</string>
+    <string name="native_library_dir">Native Library Directory</string>
+    <string name="shared_user_id">Shared User ID</string>
+    <string name="system_app">System Application</string>
+    <string name="debuggable">Debuggable</string>
+    <string name="test_only">Test Only</string>
+    <string name="large_heap">Large Heap</string>
+    <string name="hardware_accelerated">Hardware Accelerated</string>
+
+    <!-- File Sources -->
+    <string name="source_unknown">Unknown</string>
+    <string name="source_play_store">Google Play Store</string>
+    <string name="source_amazon_appstore">Amazon Appstore</string>
+    <string name="source_f_droid">F-Droid</string>
+    <string name="source_apk_pure">APKPure</string>
+    <string name="source_local_file">Local File</string>
+    <string name="source_download">Downloaded</string>
+
+    <!-- New Additional Information -->
+    <string name="app_flags">Application Flags</string>
+    <string name="security_info">Security Information</string>
+    <string name="compatibility_info">Compatibility Information</string>
+    <string name="permission_categories">Permission Categories</string>
+    <string name="dangerous_permissions">Dangerous Permissions</string>
+    <string name="normal_permissions">Normal Permissions</string>
+    <string name="signature_permissions">Signature Permissions</string>
+    <string name="special_permissions">Special Permissions</string>
+    <string name="installation_source">Installation Source</string>
+    <string name="file_hash">File Hash (SHA-256)</string>
+    <string name="certificate_fingerprint">Certificate Fingerprint</string>
+    <string name="backup_allowed">Backup Allowed</string>
+    <string name="clear_user_data_on_failed_restore">Clear User Data on Failed Restore</string>
+    <string name="allow_backup">Allow Backup</string>
+    <string name="kill_after_restore">Kill After Restore</string>
+    <string name="restore_any_version">Restore Any Version</string>
+    <string name="supports_rtl">Supports RTL</string>
+    <string name="multiarch">Multi-Architecture</string>
+    <string name="extract_native_libs">Extract Native Libraries</string>
+    <string name="use_embedded_dex">Use Embedded DEX</string>
+    <string name="default_to_device_protected_storage">Default to Device Protected Storage</string>
+    <string name="direct_boot_aware">Direct Boot Aware</string>
+    <string name="partially_direct_boot_aware">Partially Direct Boot Aware</string>
+    <string name="uses_non_sdk_api">Uses Non-SDK API</string>
+    <string name="category_game">Game</string>
+    <string name="category_audio">Audio</string>
+    <string name="category_video">Video</string>
+    <string name="category_image">Image</string>
+    <string name="category_social">Social</string>
+    <string name="category_news">News</string>
+    <string name="category_maps">Maps</string>
+    <string name="category_productivity">Productivity</string>
+    <string name="category_accessibility">Accessibility</string>
+    <string name="category_undefined">Undefined</string>
+    <string name="app_category">Application Category</string>
+    <string name="process_name">Process Name</string>
+    <string name="task_affinity">Task Affinity</string>
+    <string name="launch_mode">Launch Mode</string>
+    <string name="screen_orientation">Screen Orientation</string>
+    <string name="config_changes">Config Changes</string>
+    <string name="theme">Theme</string>
+    <string name="enabled">Enabled</string>
+    <string name="exported">Exported</string>
+    <string name="permission_count">Permission Count</string>
+    <string name="activity_count">Activity Count</string>
+    <string name="service_count">Service Count</string>
+    <string name="receiver_count">Receiver Count</string>
+    <string name="provider_count">Provider Count</string>
+    <string name="component_info">Component Information</string>
+
+    <!-- Warning and Confirmation Messages -->
+    <string name="apk_unexpected_situation">Installation Risk Warning</string>
+    <string name="signature_changed_or_downgrade">Signature change or version downgrade detected</string>
+    <string name="confirm_installation_warning">Continuing installation may cause application issues. Are you sure you want to continue?</string>
+    <string name="signature_change_and_downgrade">Signature change and version downgrade</string>
+    <string name="signature_change_only">Signature change</string>
+    <string name="version_downgrade_only">Version downgrade</string>
+    <string name="unknown_risk">Unknown risk</string>
+    <string name="preparing_installation">Preparing installation...</string>
+    <string name="uninstalling_existing">Uninstalling existing app...</string>
+    <string name="installing_new_version">Installing new version...</string>
+    <string name="trying_force_install">Trying force install...</string>
+    <string name="uninstall_success">Uninstall successful</string>
+    <string name="installation_completed">Installation completed successfully</string>
+    
+    <!-- Error Dialog -->
+    <string name="installation_failed">Installation Failed</string>
+    <string name="installation_successful">Installation Successful</string>
+    <string name="installation_details">Installation Details</string>
+    <string name="close">Close</string>
+    <string name="details">Details</string>
+    <string name="package_name_label">Package Name</string>
+    <string name="error_message_label">Error Message</string>
+    <string name="detailed_log_saved">Detailed log saved</string>
+    <string name="show_detailed_log">Show Detailed Log</string>
+    <string name="hide_detailed_log">Hide Detailed Log</string>
+    <string name="detailed_log_label">Detailed Log</string>
+    <string name="copy_log">Copy Log</string>
+    <string name="open_log_folder">Open Log Folder</string>
+    <string name="ok">OK</string>
+    
+    <!-- Installation Dialog Additional Info -->
+    <string name="memory_info_label">Memory Information</string>
+    <string name="memory_info_format">Large Heap: %1$s, Hardware Acceleration: %2$s</string>
+    <string name="estimated_pages_label">Estimated Pages</string>
+    <string name="estimated_pages_format">%d pages</string>
+    <string name="sdk_version_label">SDK Version</string>
+    <string name="sdk_version_format">Target: %1$d, Min: %2$d, Compile: %3$d</string>
+    <string name="supported_architecture_label">Supported Architecture</string>
+    
+    <!-- Additional Installation Dialog strings -->
+    <string name="file_information">File Information</string>
+    <string name="file_name">File Name</string>
+    <string name="file_modified">File Modified</string>
+    <string name="file_path">File Path</string>
+    <string name="path_type">Path Type</string>
+    <string name="real_apk_path_root">Real APK Path (Root)</string>
+    <string name="cache_path">Cache Path</string>
+    <string name="device_compatibility">Device Compatibility</string>
+    <string name="memory_performance">Memory &amp; Performance</string>
+    <string name="enhanced_security_info">Enhanced Security Information</string>
+    <string name="detailed_components">Detailed Components</string>
+    <string name="version_comparison">Version Comparison</string>
+    
+    <!-- Status strings -->
+    <string name="disabled">Disabled</string>
+    <string name="universal">Universal</string>
+    <string name="downgrade_detected">Downgrade Detected</string>
+    <string name="signature_mismatch">Signature Mismatch</string>
+
+    <!-- Open Source Information -->
+    <string name="open_source_info">Open Source &amp; Information</string>
+    <string name="github_repository">GitHub Repository</string>
+    <!-- GitHub URL,if you forked the project,please pull request to the original project,thanks :) -->
+    <string name="github_url">https://github.com/nukrs/InstallerNEXT</string>
+    <string name="important_notice">Important Notice</string>
+    <string name="xposed_module_notice">⚠️ Some devices may require Xposed module lock</string>
+    <string name="project_description">A powerful APK installer with root support</string>
+    <string name="visit_github">Visit GitHub</string>
+    <string name="features_title">Key Features</string>
+    <string name="feature_root_install">Root-based installation</string>
+    <string name="feature_signature_bypass">Signature verification bypass</string>
+    <string name="feature_downgrade_support">Downgrade installation support</string>
+    <string name="feature_detailed_info">Detailed APK information</string>
+    
+    <!-- Detail Popup Strings -->
+    <string name="sdk_detail_title">SDK Version Details</string>
+    <string name="sdk_detail_content">Target SDK: %1$d\nMinimum SDK: %2$d\nCompile SDK: %3$d\n\nTarget SDK: The API level this app is designed for\nMinimum SDK: The lowest API level this app supports\nCompile SDK: The API level used to compile this app</string>
+    
+    <string name="architecture_detail_title">Architecture Details</string>
+    <string name="architecture_detail_content">Supported Architectures:\n%1$s\n\nArchitecture determines which CPU types this app can run on:\n• ARM64: Modern 64-bit ARM processors\n• ARM32: Older 32-bit ARM processors\n• x86_64: 64-bit Intel/AMD processors\n• x86: 32-bit Intel/AMD processors</string>
+    
+    <string name="memory_detail_title">Memory Configuration</string>
+    <string name="memory_detail_content">Memory Configuration:\n%1$s\n\nLarge Heap: Allows the app to use more memory\nHardware Acceleration: Enables GPU acceleration for better performance</string>
+    
+    <string name="hash_detail_title">File Hash Information</string>
+    <string name="hash_detail_content">File Hash (SHA-256):\n%1$s\n\nHash Algorithm: SHA-256\nPurpose: Verify file integrity and authenticity\nUsage: Ensures the APK file hasn\'t been tampered with</string>
+    
+    <string name="certificate_issuer_detail_title">Certificate Issuer Details</string>
+    <string name="certificate_issuer_detail_content">Certificate Issuer:\n%1$s\n\nSignature Algorithm: %2$s\nIssuer: The entity that signed this app\nAlgorithm: The cryptographic method used for signing</string>
+    
+    <string name="certificate_validity_detail_title">Certificate Validity Period</string>
+    <string name="certificate_validity_detail_content">Certificate Validity:\n%1$s\n\nValid From: When the certificate becomes valid\nValid Until: When the certificate expires\nStatus: Current validity status of the certificate</string>
+    
+    <string name="file_path_detail_title">File Path Information</string>
+    <string name="file_path_detail_content">File Path:\n%1$s\n\nFile Name: %2$s\nModified: %3$s\nLocation: Complete path to the APK file on your device</string>
+    
+    <string name="permission_detail_title">Permission Details</string>
+    <string name="permission_detail_content">Permission Summary:\n%1$s\n\nDangerous Permissions: Require user approval and can access sensitive data\nNormal Permissions: Automatically granted, low security risk</string>
+    
+    <string name="component_detail_title">Component Information</string>
+    <string name="component_detail_content">App Components:\n%1$s\n\nActivities: User interface screens\nServices: Background processes\nReceivers: Event listeners\nProviders: Data sharing components</string>
+</resources>
