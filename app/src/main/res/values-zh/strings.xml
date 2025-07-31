@@ -1,0 +1,302 @@
+<resources>
+    <string name="app_name">Installer NEXT</string>
+
+    <!-- Main Screen -->
+    <string name="language_selection">语言选择</string>
+    <string name="system_default">系统默认</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="change">更改</string>
+    <string name="select_apk">选择APK文件</string>
+    <string name="select_apk_file">选择APK文件</string>
+    <string name="select_apk_description">选择一个APK文件来查看详细信息并安装</string>
+    <string name="no_apk_selected">未选择APK文件</string>
+    <string name="browse_files">浏览文件</string>
+    <string name="recent_files">最近文件</string>
+    <string name="root_status">Root状态</string>
+    <string name="root_available">Root权限可用</string>
+    <string name="root_not_available">Root权限不可用</string>
+    <string name="request_root">请求Root权限</string>
+
+    <!-- Installation Dialog -->
+    <string name="install_app">安装应用</string>
+    <string name="app_info">应用信息</string>
+    <string name="package_name">包名</string>
+    <string name="version_name">版本</string>
+    <string name="version_code">版本号</string>
+    <string name="version">版本</string>
+    <string name="size">大小</string>
+    <string name="target_sdk">目标SDK</string>
+    <string name="min_sdk">最低SDK</string>
+    <string name="compile_sdk">编译SDK</string>
+    <string name="app_size">应用大小</string>
+    <string name="size_change">大小变化</string>
+    <string name="file_source">文件来源</string>
+    <string name="supported_abis">支持的架构</string>
+    <string name="signature_info">签名信息</string>
+    <string name="signature_algorithm">签名算法</string>
+    <string name="signature_changed">签名已更改</string>
+    <string name="signature_unchanged">签名未更改</string>
+    <string name="permissions">权限</string>
+    <string name="features">功能</string>
+    <string name="install">安装</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="update">更新</string>
+    <string name="update_available">有可用更新</string>
+    <string name="more_info">更多信息</string>
+    <string name="ready_to_install">准备安装</string>
+    <string name="installation_blocked">安装被阻止</string>
+    <string name="requires_root">需要Root权限</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="show_advanced_info">显示高级信息</string>
+    <string name="hide_advanced_info">隐藏高级信息</string>
+    <string name="certificate_issuer">证书颁发者</string>
+    <string name="certificate_validity">证书有效期</string>
+    <string name="and_more_permissions">以及其他%d个权限</string>
+    <string name="uninstall_existing">卸载现有版本</string>
+
+    <!-- File Size Units -->
+    <string name="bytes">B</string>
+    <string name="kilobytes">KB</string>
+    <string name="megabytes">MB</string>
+    <string name="gigabytes">GB</string>
+
+    <!-- Status Messages -->
+    <string name="installing">正在安装…</string>
+    <string name="install_success">安装成功</string>
+    <string name="install_failed">安装失败</string>
+    <string name="root_required">需要Root权限</string>
+    <string name="root_granted">Root权限已授予</string>
+    <string name="root_denied">Root权限被拒绝</string>
+    <string name="parsing_apk">正在解析APK文件…</string>
+    <string name="invalid_apk">无效的APK文件</string>
+
+    <!-- Permissions -->
+    <string name="permission_storage">需要存储权限来访问APK文件</string>
+    <string name="permission_install">需要安装权限来安装应用</string>
+    <string name="grant_permission">授予权限</string>
+
+    <!-- ABI Types -->
+    <string name="abi_arm64_v8a">ARM64 (64位)</string>
+    <string name="abi_armeabi_v7a">ARM (32位)</string>
+    <string name="abi_x86_64">x86_64 (64位)</string>
+    <string name="abi_x86">x86 (32位)</string>
+    <string name="abi_universal">通用</string>
+
+    <!-- Error Messages -->
+    <string name="error_file_not_found">文件未找到</string>
+    <string name="error_permission_denied">权限被拒绝</string>
+    <string name="error_invalid_package">无效的包</string>
+    <string name="error_insufficient_storage">存储空间不足</string>
+    <string name="error_incompatible_update">不兼容的更新</string>
+    <string name="error_unknown">发生未知错误</string>
+
+    <!-- Additional Info -->
+    <string name="first_install_time">首次安装时间</string>
+    <string name="last_update_time">最后更新时间</string>
+    <string name="installer_package">安装器包</string>
+    <string name="data_directory">数据目录</string>
+    <string name="native_library_dir">本地库目录</string>
+    <string name="shared_user_id">共享用户ID</string>
+    <string name="system_app">系统应用</string>
+    <string name="debuggable">可调试</string>
+    <string name="test_only">仅测试</string>
+    <string name="large_heap">大堆内存</string>
+    <string name="hardware_accelerated">硬件加速</string>
+
+    <!-- File Sources -->
+    <string name="source_unknown">未知</string>
+    <string name="source_play_store">Google Play商店</string>
+    <string name="source_amazon_appstore">亚马逊应用商店</string>
+    <string name="source_f_droid">F-Droid</string>
+    <string name="source_apk_pure">APKPure</string>
+    <string name="source_local_file">本地文件</string>
+    <string name="source_download">已下载</string>
+
+    <!-- New Additional Information -->
+    <string name="app_flags">应用标志</string>
+    <string name="security_info">安全信息</string>
+    <string name="compatibility_info">兼容性信息</string>
+    <string name="permission_categories">权限类别</string>
+    <string name="dangerous_permissions">危险权限</string>
+    <string name="normal_permissions">普通权限</string>
+    <string name="signature_permissions">签名权限</string>
+    <string name="special_permissions">特殊权限</string>
+    <string name="installation_source">安装来源</string>
+    <string name="file_hash">文件哈希 (SHA-256)</string>
+    <string name="certificate_fingerprint">证书指纹</string>
+    <string name="backup_allowed">允许备份</string>
+    <string name="clear_user_data_on_failed_restore">恢复失败时清除用户数据</string>
+    <string name="allow_backup">允许备份</string>
+    <string name="kill_after_restore">恢复后终止</string>
+    <string name="restore_any_version">恢复任意版本</string>
+    <string name="supports_rtl">支持RTL</string>
+    <string name="multiarch">多架构</string>
+    <string name="extract_native_libs">提取本地库</string>
+    <string name="use_embedded_dex">使用嵌入式DEX</string>
+    <string name="default_to_device_protected_storage">默认设备保护存储</string>
+    <string name="direct_boot_aware">直接启动感知</string>
+    <string name="partially_direct_boot_aware">部分直接启动感知</string>
+    <string name="uses_non_sdk_api">使用非SDK API</string>
+    <string name="category_game">游戏</string>
+    <string name="category_audio">音频</string>
+    <string name="category_video">视频</string>
+    <string name="category_image">图像</string>
+    <string name="category_social">社交</string>
+    <string name="category_news">新闻</string>
+    <string name="category_maps">地图</string>
+    <string name="category_productivity">效率</string>
+    <string name="category_accessibility">无障碍</string>
+    <string name="category_undefined">未定义</string>
+    <string name="app_category">应用类别</string>
+    <string name="process_name">进程名称</string>
+    <string name="task_affinity">任务亲和性</string>
+    <string name="launch_mode">启动模式</string>
+    <string name="screen_orientation">屏幕方向</string>
+    <string name="config_changes">配置变更</string>
+    <string name="theme">主题</string>
+    <string name="enabled">已启用</string>
+    <string name="exported">已导出</string>
+    <string name="permission_count">权限数量</string>
+    <string name="activity_count">活动数量</string>
+    <string name="service_count">服务数量</string>
+    <string name="receiver_count">接收器数量</string>
+    <string name="provider_count">提供器数量</string>
+    <string name="component_info">组件信息</string>
+
+    <!-- Warning and Confirmation Messages -->
+    <string name="apk_unexpected_situation">安装风险警告</string>
+    <string name="signature_changed_or_downgrade">检测到签名更改或版本降级</string>
+    <string name="confirm_installation_warning">继续安装可能导致应用问题。您确定要继续吗？</string>
+    <string name="signature_change_and_downgrade">签名更改和版本降级</string>
+    <string name="signature_change_only">仅签名更改</string>
+    <string name="version_downgrade_only">仅版本降级</string>
+    <string name="unknown_risk">未知风险</string>
+    <string name="preparing_installation">准备安装...</string>
+    <string name="uninstalling_existing">正在卸载现有应用...</string>
+    <string name="installing_new_version">正在安装新版本...</string>
+    <string name="trying_force_install">尝试强制安装...</string>
+    <string name="uninstall_success">卸载成功</string>
+    <string name="installation_completed">安装成功完成</string>
+
+    <!-- Error Dialog -->
+    <string name="installation_failed">安装失败</string>
+    <string name="installation_successful">安装成功</string>
+    <string name="installation_details">安装详情</string>
+    <string name="close">关闭</string>
+    <string name="details">详情</string>
+    <string name="package_name_label">包名</string>
+    <string name="error_message_label">错误信息</string>
+    <string name="detailed_log_saved">详细日志已保存</string>
+    <string name="show_detailed_log">显示详细日志</string>
+    <string name="hide_detailed_log">隐藏详细日志</string>
+    <string name="detailed_log_label">详细日志</string>
+    <string name="copy_log">复制日志</string>
+    <string name="open_log_folder">打开日志文件夹</string>
+    <string name="ok">确定</string>
+
+    <!-- Installation Dialog Additional Info -->
+    <string name="memory_info_label">内存信息</string>
+    <string name="memory_info_format">大堆内存: %1$s, 硬件加速: %2$s</string>
+    <string name="estimated_pages_label">预估页数</string>
+    <string name="estimated_pages_format">%d 页</string>
+    <string name="sdk_version_label">SDK版本</string>
+    <string name="sdk_version_format">目标: %1$d, 最低: %2$d, 编译: %3$d</string>
+    <string name="supported_architecture_label">支持的架构</string>
+
+    <!-- Additional Installation Dialog strings -->
+    <string name="file_information">文件信息</string>
+    <string name="file_name">文件名</string>
+    <string name="file_modified">文件修改时间</string>
+    <string name="file_path">文件路径</string>
+    <string name="path_type">路径类型</string>
+    <string name="real_apk_path_root">真实APK路径 (Root)</string>
+    <string name="cache_path">缓存路径</string>
+    <string name="device_compatibility">设备兼容性</string>
+    <string name="memory_performance">内存和性能</string>
+    <string name="enhanced_security_info">增强安全信息</string>
+    <string name="detailed_components">详细组件</string>
+    <string name="version_comparison">版本比较</string>
+
+    <!-- Status strings -->
+    <string name="disabled">已禁用</string>
+    <string name="universal">通用</string>
+    <string name="downgrade_detected">检测到降级</string>
+    <string name="signature_mismatch">签名不匹配</string>
+
+    <!-- Open Source Information -->
+    <string name="open_source_info">开源信息</string>
+    <string name="github_repository">GitHub仓库</string>
+    <string name="github_url">https://github.com/nukrs/InstallerNEXT</string>
+    <string name="important_notice">重要提示</string>
+    <string name="xposed_module_notice">⚠️ 某些设备可能需要Xposed模块锁定</string>
+    <string name="project_description">一个支持Root的强大APK安装器</string>
+    <string name="visit_github">访问GitHub</string>
+    <string name="features_title">主要功能</string>
+    <string name="feature_root_install">基于Root的安装</string>
+    <string name="feature_signature_bypass">签名验证绕过</string>
+    <string name="feature_downgrade_support">降级安装支持</string>
+    <string name="feature_detailed_info">详细的APK信息</string>
+
+    <!-- Detail Popup Strings -->
+    <string name="sdk_detail_title">SDK版本详情</string>
+    <string name="sdk_detail_content">目标SDK: %1$d\n最低SDK: %2$d\n编译SDK: %3$d\n\n目标SDK:
+        此应用设计的API级别\n最低SDK: 此应用支持的最低API级别\n编译SDK: 用于编译此应用的API级别</string>
+
+    <string name="architecture_detail_title">架构详情</string>
+    <string name="architecture_detail_content">支持的架构:\n%1$s\n\n架构决定此应用可以在哪些CPU类型上运行:\n• ARM64:
+        现代64位ARM处理器\n• ARM32: 较旧的32位ARM处理器\n• x86_64: 64位Intel/AMD处理器\n• x86: 32位Intel/AMD处理器</string>
+
+    <string name="memory_detail_title">内存配置</string>
+    <string name="memory_detail_content">内存配置:\n%1$s\n\n大堆内存: 允许应用使用更多内存\n硬件加速: 启用GPU加速以获得更好的性能</string>
+
+    <string name="hash_detail_title">文件哈希信息</string>
+    <string name="hash_detail_content">文件哈希 (SHA-256):\n%1$s\n\n哈希算法: SHA-256\n用途: 验证文件完整性和真实性\n使用:
+        确保APK文件未被篡改</string>
+
+    <string name="certificate_issuer_detail_title">证书颁发者详情</string>
+    <string name="certificate_issuer_detail_content">证书颁发者:\n%1$s\n\n签名算法: %2$s\n颁发者: 签署此应用的实体\n算法:
+        用于签名的加密方法</string>
+
+    <string name="certificate_validity_detail_title">证书有效期</string>
+    <string name="certificate_validity_detail_content">证书有效期:\n%1$s\n\n生效时间: 证书开始生效的时间\n到期时间:
+        证书过期的时间\n状态: 证书的当前有效状态</string>
+
+    <string name="file_path_detail_title">文件路径信息</string>
+    <string name="file_path_detail_content">文件路径:\n%1$s\n\n文件名: %2$s\n修改时间: %3$s\n位置: 设备上APK文件的完整路径</string>
+
+    <string name="permission_detail_title">权限详情</string>
+    <string name="permission_detail_content">权限摘要:\n%1$s\n\n危险权限: 需要用户批准，可以访问敏感数据\n普通权限: 自动授予，安全风险较低</string>
+
+    <string name="component_detail_title">组件信息</string>
+    <string name="component_detail_content">应用组件:\n%1$s\n\n活动: 用户界面屏幕\n服务: 后台进程\n接收器: 事件监听器\n提供器:
+        数据共享组件</string>
+
+    <!-- Default Installer Settings -->
+    <string name="set_default_installer">设为默认安装器</string>
+    <string name="default_installer_info">打开系统设置将此应用设为默认安装器</string>
+    <string name="default_installer_note">注意：您需要在系统设置中手动选择此应用</string>
+    <string name="set_default_installer_root">设为默认安装器（Root）</string>
+    <string name="setting_default_installer">设置中...</string>
+    <string name="open_system_settings">打开系统设置</string>
+    <string name="root_required_for_default_installer">设为默认安装器需要Root权限</string>
+    <string name="default_installer_setup_failed">设置失败: %s</string>
+    <string name="default_installer_setup_error">设置过程中发生错误: %s</string>
+    <string name="default_installer_all_methods_failed">所有方法都失败了:</string>
+    <string name="default_installer_cannot_set">无法设为默认安装器</string>
+    <string name="default_installer_setup_error_occurred">设置默认安装器时发生错误: %1$s</string>
+    <string name="default_installer_dialog_title">设置默认安装器</string>
+    <string name="default_installer_dialog_confirm">确定</string>
+    <string name="default_installer_success">成功使用以下方法设置默认安装器: %1$s</string>
+
+    <!-- Installation Activity -->
+    <string name="installation_activity_title">安装应用</string>
+    <string name="installation_status">安装状态</string>
+    <string name="technical_details">技术详情</string>
+    <string name="warnings">警告</string>
+    <string name="installation_progress">安装进度</string>
+    <string name="back">返回</string>
+    <string name="failed_to_parse_apk">解析APK文件失败</string>
+</resources>

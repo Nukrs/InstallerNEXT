@@ -281,6 +281,92 @@ class RootInstaller(private val context: Context) {
             InstallResult.Error("Uninstallation error: ${e.message}")
         }
     }
+    
+    /**
+     * Set this app as the default installer using root privileges
+     */
+    suspend fun setAsDefaultInstaller(packageName: String): InstallResult = withContext(Dispatchers.IO) {
+        try {
+            if (!checkRootAccess()) {
+                return@withContext InstallResult.Error("Root access not available")
+            }
+            
+            val shell = Shell.getShell()
+            if (!shell.isRoot) {
+                return@withContext InstallResult.Error("Failed to obtain root privileges")
+            }
+            
+            android.util.Log.d(TAG, "Attempting to set $packageName as default installer")
+            
+            // Method 1: Try to set app links for APK files
+            val setAppLinksResult = shell.newJob().add("pm set-app-links --package $packageName 1 *.apk").exec()
+            android.util.Log.d(TAG, "Set app links result: ${setAppLinksResult.isSuccess}, Output: ${setAppLinksResult.out.joinToString()}")
+            
+            // Method 2: Try to set as preferred activity for APK installation
+            val setPreferredResult = shell.newJob().add(
+                "pm set-preferred-activity --package $packageName android.intent.action.VIEW application/vnd.android.package-archive"
+            ).exec()
+            android.util.Log.d(TAG, "Set preferred activity result: ${setPreferredResult.isSuccess}, Output: ${setPreferredResult.out.joinToString()}")
+            
+            // Method 3: Try to modify package-restrictions.xml (more aggressive approach)
+            val userId = 0 // Default user
+            val packageRestrictionsPath = "/data/system/users/$userId/package-restrictions.xml"
+            
+            // First, backup the original file
+            val backupResult = shell.newJob().add("cp $packageRestrictionsPath ${packageRestrictionsPath}.backup").exec()
+            android.util.Log.d(TAG, "Backup result: ${backupResult.isSuccess}")
+            
+            // Method 4: Try using cmd package commands (newer Android versions)
+            val cmdSetDefaultResult = shell.newJob().add("cmd package set-installer $packageName").exec()
+            android.util.Log.d(TAG, "CMD set installer result: ${cmdSetDefaultResult.isSuccess}, Output: ${cmdSetDefaultResult.out.joinToString()}")
+            
+            // Method 5: Grant INSTALL_PACKAGES permission if not already granted
+            val grantPermissionResult = shell.newJob().add("pm grant $packageName android.permission.INSTALL_PACKAGES").exec()
+            android.util.Log.d(TAG, "Grant permission result: ${grantPermissionResult.isSuccess}, Output: ${grantPermissionResult.out.joinToString()}")
+            
+            // Method 6: Set as default for package installer intent
+            val setDefaultIntentResult = shell.newJob().add(
+                "pm set-app-link $packageName always"
+            ).exec()
+            android.util.Log.d(TAG, "Set default intent result: ${setDefaultIntentResult.isSuccess}, Output: ${setDefaultIntentResult.out.joinToString()}")
+            
+            // Check if any method succeeded
+            val anySuccess = setAppLinksResult.isSuccess || 
+                           setPreferredResult.isSuccess || 
+                           cmdSetDefaultResult.isSuccess || 
+                           grantPermissionResult.isSuccess ||
+                           setDefaultIntentResult.isSuccess
+            
+            if (anySuccess) {
+                val successMethods = mutableListOf<String>()
+                if (setAppLinksResult.isSuccess) successMethods.add("App Links")
+                if (setPreferredResult.isSuccess) successMethods.add("Preferred Activity")
+                if (cmdSetDefaultResult.isSuccess) successMethods.add("CMD Package")
+                if (grantPermissionResult.isSuccess) successMethods.add("Permission Grant")
+                if (setDefaultIntentResult.isSuccess) successMethods.add("Default Intent")
+                
+                val message = context.getString(me.nukrs.root.installernext.R.string.default_installer_success, successMethods.joinToString(", "))
+                android.util.Log.d(TAG, message)
+                InstallResult.Success(message)
+            } else {
+                val errorDetails = buildString {
+                    appendLine(context.getString(me.nukrs.root.installernext.R.string.default_installer_all_methods_failed))
+                    appendLine("App Links: ${setAppLinksResult.err.joinToString()}")
+                    appendLine("Preferred Activity: ${setPreferredResult.err.joinToString()}")
+                    appendLine("CMD Package: ${cmdSetDefaultResult.err.joinToString()}")
+                    appendLine("Permission Grant: ${grantPermissionResult.err.joinToString()}")
+                    appendLine("Default Intent: ${setDefaultIntentResult.err.joinToString()}")
+                }
+                android.util.Log.e(TAG, errorDetails)
+                InstallResult.Error(context.getString(me.nukrs.root.installernext.R.string.default_installer_cannot_set), errorDetails)
+            }
+            
+        } catch (e: Exception) {
+            val errorMessage = context.getString(me.nukrs.root.installernext.R.string.default_installer_setup_error_occurred, e.message)
+            android.util.Log.e(TAG, errorMessage, e)
+            InstallResult.Error(errorMessage, e.stackTraceToString())
+        }
+    }
 }
 
 /**

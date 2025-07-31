@@ -2,6 +2,11 @@
     <string name="app_name">Installer NEXT</string>
 
     <!-- Main Screen -->
+    <string name="language_selection">Language Selection</string>
+    <string name="system_default">Default</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="change">Change</string>
     <string name="select_apk">Select APK File</string>
     <string name="select_apk_file">Select APK File</string>
     <string name="select_apk_description">Choose an APK file to view detailed information and
@@ -264,4 +269,30 @@
     
     <string name="component_detail_title">Component Information</string>
     <string name="component_detail_content">App Components:\n%1$s\n\nActivities: User interface screens\nServices: Background processes\nReceivers: Event listeners\nProviders: Data sharing components</string>
+    
+    <!-- Default Installer Settings -->
+    <string name="set_default_installer">Set as Default Installer</string>
+    <string name="default_installer_info">Open system settings to set this app as the default installer</string>
+    <string name="default_installer_note">Note: You need to manually select this app in the system settings</string>
+    <string name="set_default_installer_root">Set as Default Installer (Root)</string>
+    <string name="setting_default_installer">Setting...</string>
+    <string name="open_system_settings">Open System Settings</string>
+    <string name="root_required_for_default_installer">Root access is required to set as default installer</string>
+    <string name="default_installer_setup_failed">Setup failed: %s</string>
+    <string name="default_installer_setup_error">Error occurred during setup: %s</string>
+    <string name="default_installer_all_methods_failed">All methods failed:</string>
+    <string name="default_installer_cannot_set">Cannot set as default installer</string>
+    <string name="default_installer_setup_error_occurred">Error occurred while setting default installer: %1$s</string>
+    <string name="default_installer_dialog_title">Set Default Installer</string>
+    <string name="default_installer_dialog_confirm">OK</string>
+    <string name="default_installer_success">Successfully set default installer using the following methods: %1$s</string>
+    
+    <!-- Installation Activity -->
+    <string name="installation_activity_title">Install Application</string>
+    <string name="installation_status">Installation Status</string>
+    <string name="technical_details">Technical Details</string>
+    <string name="warnings">Warnings</string>
+    <string name="installation_progress">Installation Progress</string>
+    <string name="back">Back</string>
+    <string name="failed_to_parse_apk">Failed to parse APK file</string>
 </resources>

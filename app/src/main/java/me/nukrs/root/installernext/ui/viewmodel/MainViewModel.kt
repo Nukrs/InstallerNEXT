@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import me.nukrs.root.installernext.data.ApkInfo
+import me.nukrs.root.installernext.data.Language as AppLanguage
 import me.nukrs.root.installernext.utils.*
 import java.io.File
 import java.io.FileWriter
@@ -17,6 +18,14 @@ class MainViewModel(private val context: Context) : ViewModel() {
     private val apkParser = ApkParser(context)
     private val rootInstaller = RootInstaller(context)
     private val logSaver = LogSaver(context)
+    private val languageManager = LanguageManager(context)
+    
+    // Language State
+    var selectedLanguage by mutableStateOf(languageManager.getCurrentLanguage())
+        private set
+    
+    var showLanguageDialog by mutableStateOf(false)
+        private set
     
     // UI State
     var selectedApkInfo by mutableStateOf<ApkInfo?>(null)
@@ -272,5 +281,58 @@ class MainViewModel(private val context: Context) : ViewModel() {
     fun dismissSuccessDialog() {
         showSuccessDialog = false
         successDialogData = null
+    }
+    
+    // Default installer management
+    var isSettingDefaultInstaller by mutableStateOf(false)
+        private set
+    
+    var defaultInstallerMessage by mutableStateOf<String?>(null)
+        private set
+    
+    fun clearDefaultInstallerMessage() {
+        defaultInstallerMessage = null
+    }
+    
+    fun setDefaultInstallerError(message: String) {
+        defaultInstallerMessage = message
+    }
+    
+    fun setAsDefaultInstaller(packageName: String) {
+        viewModelScope.launch {
+            isSettingDefaultInstaller = true
+            defaultInstallerMessage = null
+            
+            try {
+                val result = rootInstaller.setAsDefaultInstaller(packageName)
+                when (result) {
+                    is InstallResult.Success -> {
+                        defaultInstallerMessage = result.message
+                    }
+                    is InstallResult.Error -> {
+                        defaultInstallerMessage = context.getString(me.nukrs.root.installernext.R.string.default_installer_setup_failed, result.message)
+                    }
+                }
+            } catch (e: Exception) {
+                defaultInstallerMessage = context.getString(me.nukrs.root.installernext.R.string.default_installer_setup_error, e.message)
+            } finally {
+                isSettingDefaultInstaller = false
+            }
+        }
+    }
+    
+    // Language management
+    fun showLanguageDialog() {
+        showLanguageDialog = true
+    }
+    
+    fun dismissLanguageDialog() {
+        showLanguageDialog = false
+    }
+    
+    fun selectLanguage(language: AppLanguage) {
+        selectedLanguage = language
+        languageManager.setLanguage(language)
+        showLanguageDialog = false
     }
 }

@@ -1,3 +1,4 @@
+//不用了孩子们，喜欢的话自己pr下把
 package me.nukrs.root.installernext.ui.components
 
 import androidx.compose.foundation.BorderStroke
@@ -32,7 +33,7 @@ import me.nukrs.root.installernext.utils.SignatureInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun WarningSection(apkInfo: ApkInfo) {
+fun WarningSection(apkInfo: ApkInfo) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
@@ -211,7 +212,7 @@ fun InstallationDialog(
 }
 
 @Composable
-private fun AppInfoSection(apkInfo: ApkInfo) {
+fun AppInfoSection(apkInfo: ApkInfo) {
     val context = LocalContext.current
     
     // Load app icon outside of composable
@@ -335,7 +336,7 @@ private fun AppInfoSection(apkInfo: ApkInfo) {
 }
 
 @Composable
-private fun InstallationStatusSection(status: InstallationStatus) {
+fun InstallationStatusSection(status: InstallationStatus) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
@@ -408,7 +409,7 @@ private fun InstallationStatusSection(status: InstallationStatus) {
 }
 
 @Composable
-private fun TechnicalDetailsSection(
+fun TechnicalDetailsSection(
     apkInfo: ApkInfo,
     signatureInfo: SignatureInfo?,
     showAdvanced: Boolean,
@@ -1030,7 +1031,7 @@ private fun TechnicalDetailsSection(
 }
 
 @Composable
-private fun InstallationProgressSection(progress: String, isInstalling: Boolean) {
+fun InstallationProgressSection(progress: String, isInstalling: Boolean) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
@@ -1077,7 +1078,7 @@ private fun InstallationProgressSection(progress: String, isInstalling: Boolean)
 }
 
 @Composable
-private fun ActionButtonsSection(
+fun ActionButtonsSection(
     apkInfo: ApkInfo,
     installationStatus: InstallationStatus?,
     isRootAvailable: Boolean,
