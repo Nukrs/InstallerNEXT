@@ -5,6 +5,7 @@ import androidx.compose.runtime.*
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import me.nukrs.root.installernext.R
 import me.nukrs.root.installernext.data.ApkInfo
 import me.nukrs.root.installernext.utils.*
 import java.io.File
@@ -59,6 +60,18 @@ class InstallationViewModel(application: Application) : AndroidViewModel(applica
     var logFilePath by mutableStateOf<String?>(null)
         private set
     
+    // Confirmation Dialog States
+    var showConfirmationDialog by mutableStateOf(false)
+        private set
+    
+    var confirmationTitle by mutableStateOf<String?>(null)
+        private set
+    
+    var confirmationMessage by mutableStateOf<String?>(null)
+        private set
+    
+    private var pendingInstallAction: (() -> Unit)? = null
+    
     init {
         checkRootAccess()
     }
@@ -84,6 +97,47 @@ class InstallationViewModel(application: Application) : AndroidViewModel(applica
     fun installApk() {
         val currentApkInfo = apkInfo ?: return
         android.util.Log.d("InstallationViewModel", "installApk called for package: ${currentApkInfo.packageName}")
+        
+        // Check if we need confirmation for risky operations
+        if (needsConfirmation(currentApkInfo)) {
+            showInstallationConfirmation(currentApkInfo)
+            return
+        }
+        
+        // Proceed with installation
+        performInstallation()
+    }
+    
+    private fun needsConfirmation(apkInfo: ApkInfo): Boolean {
+        return apkInfo.isUpdate && (apkInfo.isSignatureChanged || isDowngrade(apkInfo))
+    }
+    
+    private fun showInstallationConfirmation(apkInfo: ApkInfo) {
+        val context = getApplication<Application>()
+        val isDowngrade = isDowngrade(apkInfo)
+        val isSignatureChanged = apkInfo.isSignatureChanged
+        
+        when {
+            isSignatureChanged && isDowngrade -> {
+                confirmationTitle = context.getString(R.string.signature_changed_downgrade_warning_title)
+                confirmationMessage = context.getString(R.string.signature_changed_downgrade_warning_message)
+            }
+            isSignatureChanged -> {
+                confirmationTitle = context.getString(R.string.signature_changed_warning_title)
+                confirmationMessage = context.getString(R.string.signature_changed_warning_message)
+            }
+            isDowngrade -> {
+                confirmationTitle = context.getString(R.string.downgrade_warning_title)
+                confirmationMessage = context.getString(R.string.downgrade_warning_message)
+            }
+        }
+        
+        pendingInstallAction = { performInstallation() }
+        showConfirmationDialog = true
+    }
+    
+    private fun performInstallation() {
+        val currentApkInfo = apkInfo ?: return
         
         viewModelScope.launch {
             android.util.Log.d("InstallationViewModel", "Starting installation coroutine")
@@ -180,14 +234,12 @@ class InstallationViewModel(application: Application) : AndroidViewModel(applica
                         installationProgress = null
                     }
                     is InstallResult.Error -> {
-                        errorMessage = result.message
-                        showErrorDialog = true
+                        android.util.Log.w("InstallationViewModel", "Uninstall failed: ${result.message}")
                         installationProgress = null
                     }
                 }
             } catch (e: Exception) {
-                errorMessage = "Uninstallation failed: ${e.message}"
-                showErrorDialog = true
+                android.util.Log.w("InstallationViewModel", "Uninstall failed with exception: ${e.message}")
                 installationProgress = null
             } finally {
                 isInstalling = false
@@ -228,5 +280,20 @@ class InstallationViewModel(application: Application) : AndroidViewModel(applica
         errorMessage = null
         detailedLog = null
         logFilePath = null
+    }
+    
+    fun confirmInstallation() {
+        showConfirmationDialog = false
+        confirmationTitle = null
+        confirmationMessage = null
+        pendingInstallAction?.invoke()
+        pendingInstallAction = null
+    }
+    
+    fun dismissConfirmationDialog() {
+        showConfirmationDialog = false
+        confirmationTitle = null
+        confirmationMessage = null
+        pendingInstallAction = null
     }
 }

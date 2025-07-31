@@ -230,4 +230,16 @@ private fun InstallationScreen(
             }
         )
     }
+    
+    // Confirmation Dialog for risky installations
+    if (viewModel.showConfirmationDialog && 
+        viewModel.confirmationTitle != null && 
+        viewModel.confirmationMessage != null) {
+        ConfirmationDialog(
+            title = viewModel.confirmationTitle!!,
+            message = viewModel.confirmationMessage!!,
+            onConfirm = { viewModel.confirmInstallation() },
+            onDismiss = { viewModel.dismissConfirmationDialog() }
+        )
+    }
 }

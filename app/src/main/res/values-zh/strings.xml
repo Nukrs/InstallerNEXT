@@ -196,6 +196,14 @@
     <string name="copy_log">复制日志</string>
     <string name="open_log_folder">打开日志文件夹</string>
     <string name="ok">确定</string>
+    
+    <!-- Confirmation Dialog Messages -->
+    <string name="signature_changed_warning_title">签名变更警告</string>
+    <string name="signature_changed_warning_message">此APK的签名与已安装版本不同。安装此应用可能会导致数据丢失。是否继续？</string>
+    <string name="downgrade_warning_title">降级警告</string>
+    <string name="downgrade_warning_message">此APK版本低于当前已安装的版本。安装此应用可能会导致数据丢失或兼容性问题。是否继续？</string>
+    <string name="signature_changed_downgrade_warning_title">签名变更和降级警告</string>
+    <string name="signature_changed_downgrade_warning_message">此APK的签名不同且版本低于当前版本。安装此应用可能会导致数据丢失和安全风险。是否继续？</string>
 
     <!-- Installation Dialog Additional Info -->
     <string name="memory_info_label">内存信息</string>

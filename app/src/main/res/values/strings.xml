@@ -170,7 +170,8 @@
     <!-- Warning and Confirmation Messages -->
     <string name="apk_unexpected_situation">Installation Risk Warning</string>
     <string name="signature_changed_or_downgrade">Signature change or version downgrade detected</string>
-    <string name="confirm_installation_warning">Continuing installation may cause application issues. Are you sure you want to continue?</string>
+    <string name="confirm_installation_warning">Continuing installation may cause application
+        issues. Are you sure you want to continue?</string>
     <string name="signature_change_and_downgrade">Signature change and version downgrade</string>
     <string name="signature_change_only">Signature change</string>
     <string name="version_downgrade_only">Version downgrade</string>
@@ -181,7 +182,7 @@
     <string name="trying_force_install">Trying force install...</string>
     <string name="uninstall_success">Uninstall successful</string>
     <string name="installation_completed">Installation completed successfully</string>
-    
+
     <!-- Error Dialog -->
     <string name="installation_failed">Installation Failed</string>
     <string name="installation_successful">Installation Successful</string>
@@ -198,6 +199,14 @@
     <string name="open_log_folder">Open Log Folder</string>
     <string name="ok">OK</string>
     
+    <!-- Confirmation Dialog Messages -->
+    <string name="signature_changed_warning_title">Signature Changed Warning</string>
+    <string name="signature_changed_warning_message">This APK has a different signature than the installed version. Installing this may cause data loss. Continue?</string>
+    <string name="downgrade_warning_title">Downgrade Warning</string>
+    <string name="downgrade_warning_message">This APK is an older version than the currently installed one. Installing this may cause data loss or compatibility issues. Continue?</string>
+    <string name="signature_changed_downgrade_warning_title">Signature Changed &amp; Downgrade Warning</string>
+    <string name="signature_changed_downgrade_warning_message">This APK has a different signature and is a downgrade from the current version. Installing this may cause data loss and security risks. Continue?</string>
+
     <!-- Installation Dialog Additional Info -->
     <string name="memory_info_label">Memory Information</string>
     <string name="memory_info_format">Large Heap: %1$s, Hardware Acceleration: %2$s</string>
@@ -206,7 +215,7 @@
     <string name="sdk_version_label">SDK Version</string>
     <string name="sdk_version_format">Target: %1$d, Min: %2$d, Compile: %3$d</string>
     <string name="supported_architecture_label">Supported Architecture</string>
-    
+
     <!-- Additional Installation Dialog strings -->
     <string name="file_information">File Information</string>
     <string name="file_name">File Name</string>
@@ -220,7 +229,7 @@
     <string name="enhanced_security_info">Enhanced Security Information</string>
     <string name="detailed_components">Detailed Components</string>
     <string name="version_comparison">Version Comparison</string>
-    
+
     <!-- Status strings -->
     <string name="disabled">Disabled</string>
     <string name="universal">Universal</string>
@@ -241,52 +250,74 @@
     <string name="feature_signature_bypass">Signature verification bypass</string>
     <string name="feature_downgrade_support">Downgrade installation support</string>
     <string name="feature_detailed_info">Detailed APK information</string>
-    
+
     <!-- Detail Popup Strings -->
     <string name="sdk_detail_title">SDK Version Details</string>
-    <string name="sdk_detail_content">Target SDK: %1$d\nMinimum SDK: %2$d\nCompile SDK: %3$d\n\nTarget SDK: The API level this app is designed for\nMinimum SDK: The lowest API level this app supports\nCompile SDK: The API level used to compile this app</string>
-    
+    <string name="sdk_detail_content">Target SDK: %1$d\nMinimum SDK: %2$d\nCompile SDK:
+        %3$d\n\nTarget SDK: The API level this app is designed for\nMinimum SDK: The lowest API
+        level this app supports\nCompile SDK: The API level used to compile this app</string>
+
     <string name="architecture_detail_title">Architecture Details</string>
-    <string name="architecture_detail_content">Supported Architectures:\n%1$s\n\nArchitecture determines which CPU types this app can run on:\n• ARM64: Modern 64-bit ARM processors\n• ARM32: Older 32-bit ARM processors\n• x86_64: 64-bit Intel/AMD processors\n• x86: 32-bit Intel/AMD processors</string>
-    
+    <string name="architecture_detail_content">Supported Architectures:\n%1$s\n\nArchitecture
+        determines which CPU types this app can run on:\n• ARM64: Modern 64-bit ARM processors\n•
+        ARM32: Older 32-bit ARM processors\n• x86_64: 64-bit Intel/AMD processors\n• x86: 32-bit
+        Intel/AMD processors</string>
+
     <string name="memory_detail_title">Memory Configuration</string>
-    <string name="memory_detail_content">Memory Configuration:\n%1$s\n\nLarge Heap: Allows the app to use more memory\nHardware Acceleration: Enables GPU acceleration for better performance</string>
-    
+    <string name="memory_detail_content">Memory Configuration:\n%1$s\n\nLarge Heap: Allows the app
+        to use more memory\nHardware Acceleration: Enables GPU acceleration for better performance</string>
+
     <string name="hash_detail_title">File Hash Information</string>
-    <string name="hash_detail_content">File Hash (SHA-256):\n%1$s\n\nHash Algorithm: SHA-256\nPurpose: Verify file integrity and authenticity\nUsage: Ensures the APK file hasn\'t been tampered with</string>
-    
+    <string name="hash_detail_content">File Hash (SHA-256):\n%1$s\n\nHash Algorithm:
+        SHA-256\nPurpose: Verify file integrity and authenticity\nUsage: Ensures the APK file
+        hasn\'t been tampered with</string>
+
     <string name="certificate_issuer_detail_title">Certificate Issuer Details</string>
-    <string name="certificate_issuer_detail_content">Certificate Issuer:\n%1$s\n\nSignature Algorithm: %2$s\nIssuer: The entity that signed this app\nAlgorithm: The cryptographic method used for signing</string>
-    
+    <string name="certificate_issuer_detail_content">Certificate Issuer:\n%1$s\n\nSignature
+        Algorithm: %2$s\nIssuer: The entity that signed this app\nAlgorithm: The cryptographic
+        method used for signing</string>
+
     <string name="certificate_validity_detail_title">Certificate Validity Period</string>
-    <string name="certificate_validity_detail_content">Certificate Validity:\n%1$s\n\nValid From: When the certificate becomes valid\nValid Until: When the certificate expires\nStatus: Current validity status of the certificate</string>
-    
+    <string name="certificate_validity_detail_content">Certificate Validity:\n%1$s\n\nValid From:
+        When the certificate becomes valid\nValid Until: When the certificate expires\nStatus:
+        Current validity status of the certificate</string>
+
     <string name="file_path_detail_title">File Path Information</string>
-    <string name="file_path_detail_content">File Path:\n%1$s\n\nFile Name: %2$s\nModified: %3$s\nLocation: Complete path to the APK file on your device</string>
-    
+    <string name="file_path_detail_content">File Path:\n%1$s\n\nFile Name: %2$s\nModified:
+        %3$s\nLocation: Complete path to the APK file on your device</string>
+
     <string name="permission_detail_title">Permission Details</string>
-    <string name="permission_detail_content">Permission Summary:\n%1$s\n\nDangerous Permissions: Require user approval and can access sensitive data\nNormal Permissions: Automatically granted, low security risk</string>
-    
+    <string name="permission_detail_content">Permission Summary:\n%1$s\n\nDangerous Permissions:
+        Require user approval and can access sensitive data\nNormal Permissions: Automatically
+        granted, low security risk</string>
+
     <string name="component_detail_title">Component Information</string>
-    <string name="component_detail_content">App Components:\n%1$s\n\nActivities: User interface screens\nServices: Background processes\nReceivers: Event listeners\nProviders: Data sharing components</string>
-    
+    <string name="component_detail_content">App Components:\n%1$s\n\nActivities: User interface
+        screens\nServices: Background processes\nReceivers: Event listeners\nProviders: Data sharing
+        components</string>
+
     <!-- Default Installer Settings -->
     <string name="set_default_installer">Set as Default Installer</string>
-    <string name="default_installer_info">Open system settings to set this app as the default installer</string>
-    <string name="default_installer_note">Note: You need to manually select this app in the system settings</string>
+    <string name="default_installer_info">Open system settings to set this app as the default
+        installer</string>
+    <string name="default_installer_note">Note: You need to manually select this app in the system
+        settings</string>
     <string name="set_default_installer_root">Set as Default Installer (Root)</string>
     <string name="setting_default_installer">Setting...</string>
     <string name="open_system_settings">Open System Settings</string>
-    <string name="root_required_for_default_installer">Root access is required to set as default installer</string>
+    <string name="root_required_for_default_installer">Root access is required to set as default
+        installer</string>
     <string name="default_installer_setup_failed">Setup failed: %s</string>
     <string name="default_installer_setup_error">Error occurred during setup: %s</string>
     <string name="default_installer_all_methods_failed">All methods failed:</string>
     <string name="default_installer_cannot_set">Cannot set as default installer</string>
-    <string name="default_installer_setup_error_occurred">Error occurred while setting default installer: %1$s</string>
+    <string name="default_installer_setup_error_occurred">Error occurred while setting default
+        installer: %1$s</string>
     <string name="default_installer_dialog_title">Set Default Installer</string>
     <string name="default_installer_dialog_confirm">OK</string>
-    <string name="default_installer_success">Successfully set default installer using the following methods: %1$s</string>
-    
+    <string name="default_installer_success">Successfully set default installer using the following
+        methods: %1$s</string>
+
     <!-- Installation Activity -->
     <string name="installation_activity_title">Install Application</string>
     <string name="installation_status">Installation Status</string>
