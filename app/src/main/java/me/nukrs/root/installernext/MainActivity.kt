@@ -1,10 +1,10 @@
 package me.nukrs.root.installernext
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,13 +16,16 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
+import me.nukrs.root.installernext.ui.activity.BaseActivity
 import me.nukrs.root.installernext.ui.screen.MainScreen
 import me.nukrs.root.installernext.ui.theme.InstallerNEXTTheme
 import me.nukrs.root.installernext.ui.viewmodel.MainViewModel
+import me.nukrs.root.installernext.utils.LanguageManager
+import me.nukrs.root.installernext.utils.GlobalLanguageManager
 import java.io.File
 import java.io.FileOutputStream
 
-class MainActivity : ComponentActivity() {
+class MainActivity : BaseActivity() {
     
     companion object {
         private const val TAG = "MainActivity"
@@ -40,6 +43,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         
         Log.d(TAG, "onCreate called")
+        
+        // Ensure GlobalLanguageManager is initialized
+        GlobalLanguageManager.initialize(this)
         
         // Hide status bar using new API
         WindowCompat.setDecorFitsSystemWindows(window, false)

@@ -3,7 +3,6 @@ package me.nukrs.root.installernext.ui.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
@@ -29,7 +28,7 @@ import me.nukrs.root.installernext.utils.InstallationStatus
 import me.nukrs.root.installernext.utils.SignatureInfo
 import java.io.File
 
-class InstallationActivity : ComponentActivity() {
+class InstallationActivity : BaseActivity() {
     
     private val viewModel: InstallationViewModel by viewModels()
     

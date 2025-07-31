@@ -23,6 +23,8 @@ class LanguageManager(private val context: Context) {
     
     fun setLanguage(language: Language) {
         prefs.edit().putString(KEY_LANGUAGE, language.code).apply()
+        // Apply language immediately to current context
+        applyLanguage(context, language)
     }
     
     fun applyLanguage(context: Context, language: Language): Context {

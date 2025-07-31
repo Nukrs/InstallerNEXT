@@ -21,7 +21,9 @@ class MainViewModel(private val context: Context) : ViewModel() {
     private val languageManager = LanguageManager(context)
     
     // Language State
-    var selectedLanguage by mutableStateOf(languageManager.getCurrentLanguage())
+    var selectedLanguage by mutableStateOf(
+        me.nukrs.root.installernext.utils.GlobalLanguageManager.getCurrentLanguage(context)
+    )
         private set
     
     var showLanguageDialog by mutableStateOf(false)
@@ -321,6 +323,9 @@ class MainViewModel(private val context: Context) : ViewModel() {
         }
     }
     
+    // Language change callback
+    var onLanguageChanged: (() -> Unit)? = null
+    
     // Language management
     fun showLanguageDialog() {
         showLanguageDialog = true
@@ -331,8 +336,12 @@ class MainViewModel(private val context: Context) : ViewModel() {
     }
     
     fun selectLanguage(language: AppLanguage) {
+        android.util.Log.d("MainViewModel", "selectLanguage() called with language: ${language.code}")
         selectedLanguage = language
-        languageManager.setLanguage(language)
+        // Use global language manager to change language for all activities
+        me.nukrs.root.installernext.utils.GlobalLanguageManager.changeLanguage(context, language)
         showLanguageDialog = false
+        android.util.Log.d("MainViewModel", "Language selection completed")
+        // Note: No need to call onLanguageChanged as GlobalLanguageManager handles recreation
     }
 }
